@@ -112,14 +112,16 @@ async function run() {
     await exec.exec('git', ['push', 'origin', `:refs/tags/${majorVersion}`])
     await exec.exec('git', ['tag', '-f', majorVersion])
     await exec.exec('git push --tags origin')
+    await exec.exec(`git push origin --delete ${branchName}`)
 
     const tagName = core.getInput('tag_name').replace('refs/tags/', '')
     const releaseName = core.getInput('release_name').replace('refs/tags/', '')
+    const body = core.getInput('body')
+    const bodyPath = core.getInput('body_path')
     const draft = core.getInput('draft') === 'true'
     const prerelease = core.getInput('prerelease') === 'true'
-    const body = core.getInput('body')
     const commitish = core.getInput('commitish') || context.sha
-    const bodyPath = core.getInput('body_path')
+
     let bodyFileContent = null
     if (bodyPath) {
       try {
