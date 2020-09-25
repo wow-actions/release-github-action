@@ -111,7 +111,10 @@ async function run() {
 
     await exec.exec('git', ['push', 'origin', `:refs/tags/${majorVersion}`])
     await exec.exec('git', ['tag', '-f', majorVersion])
+
     await exec.exec('git push --tags origin')
+
+    await exec.exec(`git branch -D ${branchName}`)
     await exec.exec(`git push origin --delete ${branchName}`)
 
     const tagName = core.getInput('tag_name').replace('refs/tags/', '')
