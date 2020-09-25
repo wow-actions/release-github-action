@@ -8,6 +8,9 @@ inputs:
   build_script:
     description: Script used to build your package.
     required: false
+  tag_name:
+    description: The name of the tag.
+    required: false
   release_name:
     description: The name of the release.
     required: false

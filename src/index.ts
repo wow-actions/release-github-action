@@ -113,6 +113,7 @@ async function run() {
     await exec.exec('git', ['tag', '-f', majorVersion])
     await exec.exec('git push --tags origin')
 
+    const tagName = core.getInput('tag_name').replace('refs/tags/', '')
     const releaseName = core.getInput('release_name').replace('refs/tags/', '')
     const draft = core.getInput('draft') === 'true'
     const prerelease = core.getInput('prerelease') === 'true'
@@ -132,7 +133,7 @@ async function run() {
       ...context.repo,
       draft,
       prerelease,
-      tag_name: version,
+      tag_name: tagName || version,
       name: releaseName || version,
       body: bodyFileContent || body,
       target_commitish: commitish,
