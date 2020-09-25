@@ -114,6 +114,7 @@ async function run() {
 
     await exec.exec('git push --tags origin')
 
+    await exec.exec(`git checkout master`)
     await exec.exec(`git branch -D ${branchName}`)
     await exec.exec(`git push origin --delete ${branchName}`)
 
