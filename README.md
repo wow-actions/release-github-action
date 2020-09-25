@@ -1,5 +1,3 @@
-# release-github-action
-
 > A GitHub Action that helps you create a release for your Github Action.
 
 Creates a release branch for your GitHub Actions which will be automatically tagged and released. The release version can be defined in `package.json`.
