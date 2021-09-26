@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/wow-actions/release-github-action/compare/v1.0.2...v1.0.3) (2021-09-26)
+
+
+### Bug Fixes
+
+* 🐛 run "yarn build" to include "dist" dir ([f9a43e4](https://github.com/wow-actions/release-github-action/commit/f9a43e4361b2b7c5be1d80ef3ac0087b94c32713))
+
 ## [1.0.2](https://github.com/wow-actions/release-github-action/compare/v1.0.1...v1.0.2) (2021-09-26)
 
 # 1.0.0 (2021-09-26)
