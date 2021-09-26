@@ -5,6 +5,10 @@ inputs:
   GITHUB_TOKEN:
     description: Your GitHub token for authentication.
     required: true
+  GIT_COMMITTER_NAME:
+    required: false
+  GIT_COMMITTER_EMAIL:
+    required: false
   build_script:
     description: Script used to build your package.
     required: false

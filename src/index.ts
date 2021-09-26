@@ -10,7 +10,7 @@ import * as github from '@actions/github'
 async function run() {
   try {
     const { context } = github
-    const githubToken = core.getInput('github_token', { required: true })
+    const githubToken = core.getInput('GITHUB_TOKEN', { required: true })
     const octokit = github.getOctokit(githubToken)
 
     const packageJson = await fs.readFile('package.json', {
@@ -35,17 +35,20 @@ async function run() {
       return
     }
 
+    const committerName =
+      core.getInput('GIT_COMMITTER_NAME') || 'github-actions[bot]'
+    const committerEmail =
+      core.getInput('GIT_COMMITTER_EMAIL') ||
+      'github-actions[bot]@users.noreply.github.com'
+
     await exec.exec(`git checkout -b ${branchName}`)
-    await exec.exec(
-      `git config --global user.email "github-actions[bot]@users.noreply.github.com"`,
-    )
-    await exec.exec(`git config --global user.name "github-actions[bot]"`)
+    await exec.exec(`git config --global user.name "${committerName}"`)
+    await exec.exec(`git config --global user.email "${committerEmail}"`)
     await exec.exec(
       `git remote set-url origin https://x-access-token:${githubToken}@github.com/${context.repo.owner}/${context.repo.repo}.git`,
     )
 
     const buildScript = core.getInput('build_script') || 'build'
-
     await exec.exec(`yarn`)
     await exec.exec(`yarn ${buildScript}`)
 
@@ -135,7 +138,10 @@ async function run() {
       }
     }
 
-    const createReleaseResponse = await octokit.rest.repos.createRelease({
+    // Get the ID, html_url, and upload URL for the created release
+    const {
+      data: { id: releaseId, html_url: htmlUrl, upload_url: uploadUrl },
+    } = await octokit.rest.repos.createRelease({
       ...context.repo,
       draft,
       prerelease,
@@ -145,17 +151,11 @@ async function run() {
       target_commitish: commitish,
     })
 
-    // Get the ID, html_url, and upload URL for the created release
-    const {
-      data: { id: releaseId, html_url: htmlUrl, upload_url: uploadUrl },
-    } = createReleaseResponse
-
     core.setOutput('id', releaseId)
     core.setOutput('html_url', htmlUrl)
     core.setOutput('upload_url', uploadUrl)
   } catch (e) {
-    core.error(e)
-    core.setFailed(e.message)
+    core.setFailed(e)
   }
 }
 
