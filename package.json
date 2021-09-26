@@ -1,7 +1,7 @@
 {
   "name": "release-github-action",
   "description": "A GitHub Action that helps you create a release for your Github Action",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "files": [
     "dist",
