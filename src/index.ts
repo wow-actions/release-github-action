@@ -9,8 +9,8 @@ import * as github from '@actions/github'
 
 async function run() {
   try {
+    const { context } = github
     const githubToken = core.getInput('github_token', { required: true })
-    const context = github.context
     const octokit = github.getOctokit(githubToken)
 
     const packageJson = await fs.readFile('package.json', {
@@ -28,7 +28,7 @@ async function run() {
     const majorVersion = `v${semver.major(v)}`
     const branchName = `releases/${version}`
 
-    const tags = await octokit.repos.listTags(context.repo)
+    const tags = await octokit.rest.repos.listTags(context.repo)
 
     if (tags.data.some((tag) => tag.name === version)) {
       core.info(`Tag ${version} already exists`)
@@ -135,7 +135,7 @@ async function run() {
       }
     }
 
-    const createReleaseResponse = await octokit.repos.createRelease({
+    const createReleaseResponse = await octokit.rest.repos.createRelease({
       ...context.repo,
       draft,
       prerelease,
