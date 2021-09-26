@@ -27,6 +27,7 @@ jobs:
           extends: '@wow-actions/semantic-release-config'
           extra_plugins: |
             @semantic-release/changelog
+            @semantic-release/exec
             @semantic-release/git
         env:
           GITHUB_TOKEN: ${{ env.bot_token }}
