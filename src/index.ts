@@ -35,15 +35,15 @@ async function run() {
       return
     }
 
-    const committerName =
-      core.getInput('GIT_COMMITTER_NAME') || 'github-actions[bot]'
-    const committerEmail =
-      core.getInput('GIT_COMMITTER_EMAIL') ||
-      'github-actions[bot]@users.noreply.github.com'
+    // const committerName =
+    //   core.getInput('GIT_COMMITTER_NAME') || 'github-actions[bot]'
+    // const committerEmail =
+    //   core.getInput('GIT_COMMITTER_EMAIL') ||
+    //   'github-actions[bot]@users.noreply.github.com'
 
     await exec.exec(`git checkout -b ${branchName}`)
-    await exec.exec(`git config --global user.name "${committerName}"`)
-    await exec.exec(`git config --global user.email "${committerEmail}"`)
+    // await exec.exec(`git config --global user.name "${committerName}"`)
+    // await exec.exec(`git config --global user.email "${committerEmail}"`)
     await exec.exec(
       `git remote set-url origin https://x-access-token:${githubToken}@github.com/${context.repo.owner}/${context.repo.repo}.git`,
     )
