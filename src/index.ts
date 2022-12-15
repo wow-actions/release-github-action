@@ -6,7 +6,7 @@ import * as semver from 'semver'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 import * as github from '@actions/github'
-import { npmExec, npmRun } from './npm'
+import { isYarn, npmExec, npmRun } from './npm'
 
 async function run() {
   try {
@@ -76,12 +76,16 @@ async function run() {
       }),
     )
 
-    await npmExec('pack')
+    const packname = `${pkg.name}-${pkg.version}.tgz`
+    if (isYarn) {
+      await npmExec('pack', ['-f', packname])
+    } else {
+      await npmExec('pack')
+    }
 
     // We create a branch containing only the contents of the package.
-    const packagedFilename = `${pkg.name}-${version}.tgz`
-    const packagedFilePath = path.join(process.cwd(), packagedFilename)
-    const tempPackedFilePath = path.join(os.tmpdir(), packagedFilename)
+    const packagedFilePath = path.join(process.cwd(), packname)
+    const tempPackedFilePath = path.join(os.tmpdir(), packname)
     await fs.move(packagedFilePath, tempPackedFilePath)
 
     // Remove all files and folders.
@@ -92,7 +96,7 @@ async function run() {
     await fs.move(tempPackedFilePath, packagedFilePath)
 
     // Extract it.
-    core.info(`Extracting ${packagedFilename}`)
+    core.info(`Extracting ${packname}`)
     await exec.exec('ls')
     await tar.extract({ file: packagedFilePath })
     await fs.remove(packagedFilePath)

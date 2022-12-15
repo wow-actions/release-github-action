@@ -32,7 +32,6 @@
     "name": "bubkoo",
     "email": "bubkoo.wy@gmail.com"
   },
-  "contributors": [],
   "repository": "https://github.com/wow-actions/release-github-action",
   "dependencies": {
     "@actions/core": "^1.10.0",
