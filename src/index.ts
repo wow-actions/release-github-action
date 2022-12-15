@@ -6,6 +6,7 @@ import * as semver from 'semver'
 import * as core from '@actions/core'
 import * as exec from '@actions/exec'
 import * as github from '@actions/github'
+import { npmExec, npmRun } from './npm'
 
 async function run() {
   try {
@@ -20,6 +21,7 @@ async function run() {
       name: string
       version: string
       files?: string[]
+      scripts?: { [task: string]: string }
     } = JSON.parse(packageJson)
 
     const v = pkg.version
@@ -29,7 +31,6 @@ async function run() {
     const branchName = `releases/${version}`
 
     const tags = await octokit.rest.repos.listTags(context.repo)
-
     if (tags.data.some((tag) => tag.name === version)) {
       core.info(`Tag ${version} already exists`)
       return
@@ -48,9 +49,12 @@ async function run() {
       `git remote set-url origin https://x-access-token:${githubToken}@github.com/${context.repo.owner}/${context.repo.repo}.git`,
     )
 
+    await npmExec('install')
+
     const buildScript = core.getInput('build_script') || 'build'
-    await exec.exec(`yarn`)
-    await exec.exec(`yarn ${buildScript}`)
+    if (pkg.scripts && pkg.scripts[buildScript]) {
+      await npmRun(buildScript)
+    }
 
     // We manually remove some files that are not essential to running the
     // package should not be included in the build.
@@ -72,7 +76,7 @@ async function run() {
       }),
     )
 
-    await exec.exec(`yarn pack`)
+    await npmExec('pack')
 
     // We create a branch containing only the contents of the package.
     const packagedFilename = `${pkg.name}-${version}.tgz`
