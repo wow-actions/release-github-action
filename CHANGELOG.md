@@ -1,3 +1,20 @@
+# [2.0.0](https://github.com/wow-actions/release-github-action/compare/v1.0.0...v2.0.0) (2022-12-22)
+
+
+### Bug Fixes
+
+* remove unused file ([ed176f2](https://github.com/wow-actions/release-github-action/commit/ed176f225219ef5e418308e456a220477ec1fb7a))
+
+
+### Documentation
+
+* update usage ([36db999](https://github.com/wow-actions/release-github-action/commit/36db9998602a422f14f32d665c218bc503206529))
+
+
+### BREAKING CHANGES
+
+* release 2.0
+
 ## [1.0.1](https://github.com/wow-actions/release-github-action/compare/v1.0.0...v1.0.1) (2022-12-22)
 
 
