@@ -1,50 +1,61 @@
 name: Release GitHub Action
-description: Create a release for your Github Action.
+description: Create a semantic release for your Github Action.
 author: bubkoo <bubkoo.wy@gmail.com>
 inputs:
-  GITHUB_TOKEN:
-    description: Your GitHub token for authentication.
-    required: true
-  GIT_COMMITTER_NAME:
+  cwd:
     required: false
-  GIT_COMMITTER_EMAIL:
+    description: Specify another working directory for semantic release. Default one is provided by github.
+  dry_run:
     required: false
-  build_script:
-    description: Script used to build your package.
+    description: Whether to run semantic release in `dry-run` mode. It will override the dryRun attribute in your configuration file.
+  branches:
     required: false
-  tag_name:
-    description: The name of the tag.
+    description: The branches on which releases should happen. It will override the branches attribute in your configuration file. Support for semantic-release above v16. See https://semantic-release.gitbook.io/semantic-release/usage/configuration#branches for more information.
+  commit_analyzer:
     required: false
-  release_name:
-    description: The name of the release.
+    description: Options for semantic-release/commit-analyzer.
+  release_notes_generator:
     required: false
-  body:
-    description: Text describing the contents of the tag.
+    description: Options for semantic-release/release-notes-generator.
+  changelog:
     required: false
-  body_path:
-    description: Path to file with information about the tag.
+    description: Options for semantic-release/changelog.
+  github:
     required: false
-  draft:
-    description: '`true` to create a draft (unpublished) release, `false` to create a published one. Default: `false`.'
+    description: Options for semantic-release/github.
+  git:
     required: false
-    default: false
-  prerelease:
-    description: '`true` to identify the release as a prerelease. `false` to identify the release as a full release. Default: `false`.'
-    required: false
-    default: false
-  commitish:
-    description: 'Any branch or commit SHA the Git tag is created from, unused if the Git tag already exists. Default: SHA of current commit.'
-    required: false
+    description: Options for semantic-release/git.
+
 outputs:
-  id:
-    description: The ID of the created Release.
-  html_url:
-    description: The URL users can navigate to in order to view the release.
-  upload_url:
-    description: The URL for uploading assets to the release.
+  last_release_version:
+    description: Version of the previous release, if there was one.
+  last_release_git_head:
+    description: The sha of the last commit being part of the last release, if there was one.
+  last_release_git_tag:
+    description: The Git tag associated with the last release, if there was one.
+  new_release_published:
+    description: Whether a new release was published.
+  new_release_version:
+    description: Version of the new release.
+  new_release_major_version:
+    description: Major version of the new release.
+  new_release_minor_version:
+    description: Minor version of the new release.
+  new_release_patch_version:
+    description: Patch version of the new release.
+  new_release_channel:
+    description: The distribution channel on which the last release was initially made available (undefined for the default distribution channel).
+  new_release_notes:
+    description: The release notes for the new release.
+  new_release_git_head:
+    description: The sha of the last commit being part of the new release.
+  new_release_git_tag:
+    description: The Git tag associated with the new release.
+
 runs:
   using: node16
   main: dist/index.js
 branding:
-  icon: 'truck'
-  color: 'blue'
+  icon: truck
+  color: blue

@@ -8,13 +8,14 @@ const execPath = npmPathIsJs ? process.execPath : npmPath || 'npm'
 
 export const isYarn = path.basename(npmPath || 'npm').startsWith('yarn')
 
-function getArgs(task: string, taskArgs?: string[], isRun?: boolean) {
+function getArgs(task: string, taskArgs?: string[], cmd?: string) {
   const args: string[] = []
   if (npmPathIsJs) {
     args.push(npmPath)
   }
-  if (isRun) {
-    args.push('run')
+
+  if (cmd) {
+    args.push(cmd)
   }
 
   args.push(task)
@@ -27,9 +28,13 @@ function getArgs(task: string, taskArgs?: string[], isRun?: boolean) {
 }
 
 export async function npmRun(task: string, args?: string[]) {
-  return exec(execPath, getArgs(task, args, true))
+  return exec(execPath, getArgs(task, args, 'run'))
 }
 
 export async function npmExec(task: string, args?: string[]) {
   return exec(execPath, getArgs(task, args))
+}
+
+export async function npmInstall(pkg: string, args?: string[]) {
+  return exec(execPath, getArgs(pkg, args, 'install'))
 }
