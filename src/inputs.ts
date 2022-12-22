@@ -1,4 +1,4 @@
-import core from '@actions/core'
+import * as core from '@actions/core'
 import parseInputs from '@wow-actions/parse-inputs'
 
 export function getInputs() {
