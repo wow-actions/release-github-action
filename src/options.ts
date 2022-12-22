@@ -55,7 +55,7 @@ export function getSemanticReleaseOptions(
       [
         '@semantic-release/git',
         {
-          assets: ['dist/*.js', 'package.json', 'CHANGELOG.md'],
+          assets: ['package.json', 'CHANGELOG.md'],
           ...inputs.git,
         },
       ],
