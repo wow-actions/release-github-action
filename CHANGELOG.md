@@ -1,3 +1,10 @@
+## [2.0.1](https://github.com/wow-actions/release-github-action/compare/v2.0.0...v2.0.1) (2022-12-22)
+
+
+### Bug Fixes
+
+* should add dist dir to tag ([8c5276e](https://github.com/wow-actions/release-github-action/commit/8c5276ef76d1660edfa9e82b0b2eaba9a38d48c4))
+
 # [2.0.0](https://github.com/wow-actions/release-github-action/compare/v1.0.0...v2.0.0) (2022-12-22)
 
 
