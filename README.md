@@ -1,4 +1,4 @@
-> A GitHub Action that helps you create a release for your Github Action.
+> A GitHub Action that helps you create a semantic release for your Github Action.
 
 Creates a release branch for your GitHub Actions which will be automatically tagged and released. The release version can be defined in `package.json`.
 
@@ -40,16 +40,10 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: bubkoo/release-github-action@v1
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            Changes in this Release
-            - First Change
-            - Second Change
-          draft: false
-          prerelease: false
+      - uses: actions/checkout@v3
+      - uses: bubkoo/release-github-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
 ## License
