@@ -31,12 +31,12 @@ jobs:
 
 See [semantic-release/git#environment-variables](https://github.com/semantic-release/git#environment-variables) for more information.
 
-| Variable | Description | Default |
-| --- | --- | --- |
-| `GITHUB_TOKEN` | The GitHub token for authentication. | `${{ secrets.GITHUB_TOKEN }}` |
-| `GIT_AUTHOR_NAME` | The author name associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing). | @semantic-release-bot. |
-| `GIT_AUTHOR_EMAIL` | The author email associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing). | @semantic-release-bot email address. |
-| `GIT_COMMITTER_NAME` | The committer name associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing). | @semantic-release-bot. |
+| Variable              | Description                                                                                                                                                              | Default                              |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------|
+| `GITHUB_TOKEN`        | The GitHub token for authentication.                                                                                                                                     | `${{ secrets.GITHUB_TOKEN }}`        |
+| `GIT_AUTHOR_NAME`     | The author name associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing).     | @semantic-release-bot.               |
+| `GIT_AUTHOR_EMAIL`    | The author email associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing).    | @semantic-release-bot email address. |
+| `GIT_COMMITTER_NAME`  | The committer name associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing).  | @semantic-release-bot.               |
 | `GIT_COMMITTER_EMAIL` | The committer email associated with the release commit. See [Git environment variables](https://git-scm.com/book/en/v2/Git-Internals-Environment-Variables#_committing). | @semantic-release-bot email address. |
 
 ```yaml
@@ -52,16 +52,16 @@ See [semantic-release/git#environment-variables](https://github.com/semantic-rel
 
 ### Inputs
 
-| Name | Required | Description |
-| --- | :-: | --- |
-| `cwd` | false | Use another working directory for semantic release [[Details](#cwd)] |
-| `dry_run` | false | Whether to run semantic release in `dry-run` mode. [[Details](#dry_run)] |
-| `branches` | false | The branches on which releases should happen.[[Details](#branches)] |
-| `commit_analyzer` | false | Options for [semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer). [[Details](#commit_analyzer)] |
-| `release_notes_generator` | false | Options for [semantic-release/release-notes-generator](https://github.com/semantic-release/release-notes-generator). [[Details](#release_notes_generator)] |
-| `changelog` | false | Options for [semantic-release/changelog](https://github.com/semantic-release/changelog). [[Details](#changelog)] |
-| `github` | false | Options for [semantic-release/github](https://github.com/semantic-release/github). [[Details](#github)] |
-| `git` | false | Options for [semantic-release/git](https://github.com/semantic-release/git). [[Details](#git)] |
+| Name                      | Required | Description                                                                                                                                                |
+|---------------------------|:--------:|------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `cwd`                     |  false   | Use another working directory for semantic release [[Details](#cwd)]                                                                                       |
+| `dry_run`                 |  false   | Whether to run semantic release in `dry-run` mode. [[Details](#dry_run)]                                                                                   |
+| `branches`                |  false   | The branches on which releases should happen.[[Details](#branches)]                                                                                        |
+| `commit_analyzer`         |  false   | Options for [semantic-release/commit-analyzer](https://github.com/semantic-release/commit-analyzer). [[Details](#commit_analyzer)]                         |
+| `release_notes_generator` |  false   | Options for [semantic-release/release-notes-generator](https://github.com/semantic-release/release-notes-generator). [[Details](#release_notes_generator)] |
+| `changelog`               |  false   | Options for [semantic-release/changelog](https://github.com/semantic-release/changelog). [[Details](#changelog)]                                           |
+| `github`                  |  false   | Options for [semantic-release/github](https://github.com/semantic-release/github). [[Details](#github)]                                                    |
+| `git`                     |  false   | Options for [semantic-release/git](https://github.com/semantic-release/git). [[Details](#git)]                                                             |
 
 #### cwd
 
@@ -194,9 +194,9 @@ Options for [semantic-release/git](https://github.com/semantic-release/git). Use
 
 ### Outputs
 
-| Name | Description |
-| --- | --- | --- |
-| `last_release_version` | Version of the previous release, if there was one. (e.g. `1.2.0`) |
+| Name                    | Description                                                                  |
+|-------------------------|------------------------------------------------------------------------------|
+| `last_release_version`  | Version of the previous release, if there was one. (e.g. `1.2.0`)            |
 | `last_release_git_head` | The sha of the last commit being part of the last release, if there was one. |
 | `last_release_git_tag` | The Git tag associated with the last release, if there was one. |  |
 | `new_release_published` | Whether a new release was published. The return value is in the form of a string. (`"true"` or `"false"`) |
