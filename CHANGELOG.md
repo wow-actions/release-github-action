@@ -1,3 +1,11 @@
+## [2.0.8](https://github.com/wow-actions/release-github-action/compare/v2.0.7...v2.0.8) (2023-01-03)
+
+
+### Bug Fixes
+
+* install plugins ([a08b913](https://github.com/wow-actions/release-github-action/commit/a08b913dc290a15a7b8d2f04955273e8f9c1a8e8))
+* install plugins in global ([1abd9be](https://github.com/wow-actions/release-github-action/commit/1abd9bee1b15921171f2c869674ad174f669a9c8))
+
 ## [2.0.7](https://github.com/wow-actions/release-github-action/compare/v2.0.6...v2.0.7) (2023-01-03)
 
 
