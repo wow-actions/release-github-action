@@ -1,3 +1,10 @@
+## [2.0.5](https://github.com/wow-actions/release-github-action/compare/v2.0.4...v2.0.5) (2023-01-03)
+
+
+### Bug Fixes
+
+* pre-import plugins ([c99fc5c](https://github.com/wow-actions/release-github-action/commit/c99fc5cc8104842f15393ba8ee60eadc780d6414))
+
 ## [2.0.4](https://github.com/wow-actions/release-github-action/compare/v2.0.3...v2.0.4) (2023-01-03)
 
 
