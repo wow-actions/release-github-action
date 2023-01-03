@@ -46,6 +46,13 @@ export function getSemanticReleaseOptions(
         },
       ],
       [
+        '@semantic-release/npm',
+        {
+          npmPublish: false,
+          tarballDir: 'dist',
+        },
+      ],
+      [
         '@semantic-release/github',
         {
           addReleases: 'bottom',
