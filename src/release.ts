@@ -12,11 +12,12 @@ export async function release() {
   }
 
   await setup()
-  await npmInstall('@semantic-release/commit-analyzer')
-  await npmInstall('@semantic-release/release-notes-generator')
-  await npmInstall('@semantic-release/changelog')
-  await npmInstall('@semantic-release/github')
-  await npmInstall('@semantic-release/git')
+  const npmInstallArgs = ['--silent', '-g']
+  await npmInstall('@semantic-release/commit-analyzer', npmInstallArgs)
+  await npmInstall('@semantic-release/release-notes-generator', npmInstallArgs)
+  await npmInstall('@semantic-release/changelog', npmInstallArgs)
+  await npmInstall('@semantic-release/github', npmInstallArgs)
+  await npmInstall('@semantic-release/git', npmInstallArgs)
   const options = getSemanticReleaseOptions(inputs)
   const result = await semanticRelease(options)
   await windup(result)
