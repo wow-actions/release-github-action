@@ -1,3 +1,10 @@
+## [2.1.1](https://github.com/wow-actions/release-github-action/compare/v2.1.0...v2.1.1) (2023-01-03)
+
+
+### Bug Fixes
+
+* donot generate npm tarball ([cdb68e0](https://github.com/wow-actions/release-github-action/commit/cdb68e0ff9336ff58aeda247677df80ed560a6d5))
+
 # [2.1.0](https://github.com/wow-actions/release-github-action/compare/v2.0.9...v2.1.0) (2023-01-03)
 
 
