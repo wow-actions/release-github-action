@@ -1,3 +1,10 @@
+## [2.0.4](https://github.com/wow-actions/release-github-action/compare/v2.0.3...v2.0.4) (2023-01-03)
+
+
+### Bug Fixes
+
+* add missing deps ([3789113](https://github.com/wow-actions/release-github-action/commit/3789113c49c445d8f23d0e4e43ef10f16b3d853a))
+
 ## [2.0.3](https://github.com/wow-actions/release-github-action/compare/v2.0.2...v2.0.3) (2022-12-23)
 
 ## [2.0.2](https://github.com/wow-actions/release-github-action/compare/v2.0.1...v2.0.2) (2022-12-23)
