@@ -1,3 +1,10 @@
+## [2.0.7](https://github.com/wow-actions/release-github-action/compare/v2.0.6...v2.0.7) (2023-01-03)
+
+
+### Bug Fixes
+
+* fix npm install args ([a45b4c5](https://github.com/wow-actions/release-github-action/commit/a45b4c5117d9fecb53d7a85dd5cafd2f7aeb0595))
+
 ## [2.0.6](https://github.com/wow-actions/release-github-action/compare/v2.0.5...v2.0.6) (2023-01-03)
 
 
