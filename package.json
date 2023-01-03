@@ -1,7 +1,7 @@
 {
   "name": "release-github-action",
   "description": "Create a semantic release for your Github Action",
-  "version": "1.1.1",
+  "version": "2.1.0",
   "main": "dist/index.js",
   "files": [
     "dist",

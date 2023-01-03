@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/wow-actions/release-github-action/compare/v2.0.9...v2.1.0) (2023-01-03)
+
+
+### Features
+
+* use npm to update version of package.json ([86dfa91](https://github.com/wow-actions/release-github-action/commit/86dfa917862c77e839b51c34beaa762fe076977a))
+
 ## [2.0.9](https://github.com/wow-actions/release-github-action/compare/v2.0.8...v2.0.9) (2023-01-03)
 
 
