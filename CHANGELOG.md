@@ -1,3 +1,10 @@
+## [2.0.9](https://github.com/wow-actions/release-github-action/compare/v2.0.8...v2.0.9) (2023-01-03)
+
+
+### Bug Fixes
+
+* install plugin with "--no-save" ([be46c62](https://github.com/wow-actions/release-github-action/commit/be46c629fda16ffdd909ae527705eae2922a4ddb))
+
 ## [2.0.8](https://github.com/wow-actions/release-github-action/compare/v2.0.7...v2.0.8) (2023-01-03)
 
 
