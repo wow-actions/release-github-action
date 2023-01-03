@@ -1,3 +1,10 @@
+## [2.0.6](https://github.com/wow-actions/release-github-action/compare/v2.0.5...v2.0.6) (2023-01-03)
+
+
+### Bug Fixes
+
+* install plugins manually ([fe5399d](https://github.com/wow-actions/release-github-action/commit/fe5399d83a50938e9bb274d9091a04509b57060e))
+
 ## [2.0.5](https://github.com/wow-actions/release-github-action/compare/v2.0.4...v2.0.5) (2023-01-03)
 
 
