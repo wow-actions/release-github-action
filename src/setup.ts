@@ -11,7 +11,7 @@ export async function setup() {
     '@semantic-release/github',
     '@semantic-release/git',
   ]
-  await exec(`npm install ${plugins.join(' ')} -g --silent`)
+  await exec(`npm install ${plugins.join(' ')} --silent`)
   core.debug(`action.cwd: ${path.resolve(__dirname, '..')}`)
   core.debug(`process.cwd: ${process.cwd()}`)
 }
