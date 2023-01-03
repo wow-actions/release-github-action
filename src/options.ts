@@ -49,7 +49,7 @@ export function getSemanticReleaseOptions(
         '@semantic-release/npm',
         {
           npmPublish: false,
-          tarballDir: 'dist',
+          // tarballDir: 'dist',
         },
       ],
       [
