@@ -1,3 +1,13 @@
+## [2.1.2](https://github.com/wow-actions/release-github-action/compare/v2.1.1...v2.1.2) (2023-03-10)
+
+
+### Bug Fixes
+
+* cannot find module '@semantic-release/error' ([857ecfe](https://github.com/wow-actions/release-github-action/commit/857ecfeb0405a51164b329f0346c0a9cdc197088))
+* cannot find module '@semantic-release/error' ([fd89e1e](https://github.com/wow-actions/release-github-action/commit/fd89e1e55b28cce5c906d9bd09006baf4d1c40ae))
+* cannot find module 'conventional-changelog-angular' ([89865ea](https://github.com/wow-actions/release-github-action/commit/89865ea70b1f1d4c4fb04ac726c978a728e1e239))
+* remove 'conventional-changelog-angular' ([032d8e9](https://github.com/wow-actions/release-github-action/commit/032d8e9a9064e4d07c6a1a92d3421136d158793e))
+
 ## [2.1.1](https://github.com/wow-actions/release-github-action/compare/v2.1.0...v2.1.1) (2023-01-03)
 
 

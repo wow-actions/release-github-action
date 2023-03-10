@@ -1,6 +1,6 @@
 {
   "name": "release-github-action",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Create a semantic release for your Github Action",
   "repository": "https://github.com/wow-actions/release-github-action",
   "license": "MIT",
