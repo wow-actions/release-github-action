@@ -7,16 +7,15 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - uses: bubkoo/reusable-workflows/.github/actions/prepare-repo@master
-        with:
-          persist-credentials: false
-          build-command: build
-
       - name: Generate Token
         uses: wow-actions/use-app-token@v2
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
+
+      - uses: bubkoo/reusable-workflows/.github/actions/prepare-repo@master
+        with:
+          build-command: build
 
       - name: Release
         uses: ./
