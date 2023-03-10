@@ -1,6 +1,14 @@
 import * as SemanticRelease from 'semantic-release'
 import { Inputs } from './inputs'
 import { inlinePlugin } from './plugin'
+import {
+  changelog,
+  commitAnalyzer,
+  git,
+  github,
+  npm,
+  releaseNotesGenerator,
+} from './plugins'
 
 export function getSemanticReleaseOptions(
   inputs: Inputs,
@@ -10,7 +18,7 @@ export function getSemanticReleaseOptions(
     branches: inputs.branches,
     plugins: [
       [
-        '@semantic-release/commit-analyzer',
+        commitAnalyzer,
         {
           preset: 'angular',
           releaseRules: [
@@ -34,33 +42,33 @@ export function getSemanticReleaseOptions(
         },
       ],
       [
-        '@semantic-release/release-notes-generator',
+        releaseNotesGenerator,
         {
           ...inputs.releaseNotesGenerator,
         },
       ],
       [
-        '@semantic-release/changelog',
+        changelog,
         {
           ...inputs.changelog,
         },
       ],
       [
-        '@semantic-release/npm',
+        npm,
         {
           npmPublish: false,
           // tarballDir: 'dist',
         },
       ],
       [
-        '@semantic-release/github',
+        github,
         {
           addReleases: 'bottom',
           ...inputs.github,
         },
       ],
       [
-        '@semantic-release/git',
+        git,
         {
           assets: ['dist/**/*', 'package.json', 'CHANGELOG.md'],
           ...inputs.git,

@@ -1,0 +1,6 @@
+declare module '@semantic-release/changelog'
+declare module '@semantic-release/git'
+declare module '@semantic-release/github'
+declare module '@semantic-release/npm'
+declare module '@semantic-release/release-notes-generator'
+declare module '@semantic-release/commit-analyzer'
