@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/wow-actions/release-github-action/compare/v2.1.2...v2.1.3) (2023-03-10)
+
+
+### Bug Fixes
+
+* keep checkout token ([c1df117](https://github.com/wow-actions/release-github-action/commit/c1df1177d77ad979f515bc06b71d7a3056de187e))
+
 ## [2.1.2](https://github.com/wow-actions/release-github-action/compare/v2.1.1...v2.1.2) (2023-03-10)
 
 
