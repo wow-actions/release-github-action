@@ -20,7 +20,6 @@ specifiers:
   '@types/semantic-release__error': ^3.0.0
   '@vercel/ncc': 0.36.1
   '@wow-actions/parse-inputs': ^2.0.1
-  conventional-changelog-angular: ^5.0.13
   eslint: ^8.29.0
   npm-run-all: ^4.1.5
   prettier: ^2.4.1
@@ -40,7 +39,6 @@ dependencies:
   '@semantic-release/npm': 9.0.2_semantic-release@19.0.5
   '@semantic-release/release-notes-generator': 10.0.3_semantic-release@19.0.5
   '@wow-actions/parse-inputs': 2.0.1_@actions+core@1.10.0
-  conventional-changelog-angular: 5.0.13
   semantic-release: 19.0.5
 
 devDependencies:
