@@ -1,3 +1,4 @@
+import angularChangelog from 'conventional-changelog-angular'
 import * as SemanticRelease from 'semantic-release'
 import { Inputs } from './inputs'
 import { inlinePlugin } from './plugin'
@@ -20,7 +21,7 @@ export function getSemanticReleaseOptions(
       [
         commitAnalyzer,
         {
-          preset: 'angular',
+          preset: angularChangelog,
           releaseRules: [
             { breaking: true, release: 'major' },
             { revert: true, release: 'patch' },

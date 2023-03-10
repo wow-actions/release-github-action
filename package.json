@@ -31,6 +31,7 @@
     "@semantic-release/npm": "^9.0.2",
     "@semantic-release/release-notes-generator": "^10.0.3",
     "@wow-actions/parse-inputs": "^2.0.1",
+    "conventional-changelog-angular": "^5.0.13",
     "semantic-release": "^19.0.5"
   },
   "devDependencies": {
