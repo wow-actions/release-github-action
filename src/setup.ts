@@ -4,6 +4,9 @@ import path from 'node:path'
 
 export async function setup() {
   core.setOutput('new_release_published', 'false')
+  core.debug(`action.cwd: ${path.resolve(__dirname, '..')}`)
+  core.debug(`process.cwd: ${process.cwd()}`)
+
   const plugins = [
     '@semantic-release/commit-analyzer',
     '@semantic-release/release-notes-generator',
@@ -12,7 +15,5 @@ export async function setup() {
     '@semantic-release/github',
     '@semantic-release/git',
   ]
-  await exec(`npm install ${plugins.join(' ')} --no-save`)
-  core.debug(`action.cwd: ${path.resolve(__dirname, '..')}`)
-  core.debug(`process.cwd: ${process.cwd()}`)
+  await exec(`npm install ${plugins.join(' ')} -g`)
 }
