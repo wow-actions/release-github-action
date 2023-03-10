@@ -1,5 +1,5 @@
-import path from 'path'
 import { exec } from '@actions/exec'
+import path from 'node:path'
 
 const npmPath = process.env.npm_execpath
 const npmPathIsJs =

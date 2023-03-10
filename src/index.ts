@@ -4,9 +4,10 @@ import { release } from './release'
 async function run() {
   try {
     await release()
-  } catch (e) {
-    core.setFailed(e)
+  } catch (error) {
+    core.setFailed(error)
   }
 }
 
+// eslint-disable-next-line unicorn/prefer-top-level-await
 run()

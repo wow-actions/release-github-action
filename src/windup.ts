@@ -23,13 +23,12 @@ export async function windup(result: Result) {
     `Published ${nextRelease.type} release version ${nextRelease.version} containing ${commits.length} commits.`,
   )
 
-  // eslint-disable-next-line no-restricted-syntax
   for (const release of releases) {
     core.debug(`The release was published with plugin "${release.pluginName}".`)
   }
 
   const { version, channel, notes, gitHead, gitTag } = nextRelease
-  const [major, minor, patch] = version.split(/\.|-|\s/g, 3)
+  const [major, minor, patch] = version.split(/[\s.-]/g, 3)
 
   // set outputs
   core.setOutput('new_release_published', 'true')

@@ -1,4 +1,4 @@
-import SemanticRelease from 'semantic-release'
+import * as SemanticRelease from 'semantic-release'
 import { Inputs } from './inputs'
 import { inlinePlugin } from './plugin'
 

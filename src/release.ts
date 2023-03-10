@@ -1,6 +1,6 @@
 import semanticRelease from 'semantic-release'
-import { getSemanticReleaseOptions } from './options'
 import { getInputs } from './inputs'
+import { getSemanticReleaseOptions } from './options'
 import { setup } from './setup'
 import { windup } from './windup'
 

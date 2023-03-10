@@ -7,22 +7,18 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      - name: ⤵️　Checkout
-        uses: actions/checkout@v3
+      - uses: bubkoo/reusable-workflows/.github/actions/prepare-repo@master
+        with:
+          persist-credentials: false
+          build-command: build
 
-      - name: 🚧　Install
-        run: yarn install
-
-      - name: 📦　Build
-        run: yarn build
-
-      - name: 🔑　Generate Token
+      - name: Generate Token
         uses: wow-actions/use-app-token@v2
         with:
           app_id: ${{ secrets.APP_ID }}
           private_key: ${{ secrets.PRIVATE_KEY }}
 
-      - name: 📦　Release
+      - name: Release
         uses: ./
         env:
           GITHUB_TOKEN: ${{ env.BOT_TOKEN }}

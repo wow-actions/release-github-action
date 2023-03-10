@@ -1,4 +1,4 @@
-import SemanticRelease from 'semantic-release';
+import * as SemanticRelease from 'semantic-release';
 interface Logger {
     log: (message: string, ...vars: any[]) => void;
     error: (message: string, ...vars: any[]) => void;

@@ -1,7 +1,7 @@
 /* eslint-disable no-await-in-loop */
 
-import SemanticRelease from 'semantic-release'
 import { exec } from '@actions/exec'
+import * as SemanticRelease from 'semantic-release'
 import { GitError } from './errors'
 
 interface Logger {
@@ -22,7 +22,6 @@ async function forcePushTags({
   targetTags: string[]
 }) {
   try {
-    // eslint-disable-next-line no-restricted-syntax
     for (const targetTag of targetTags) {
       // Delete the current target tag on the remote if it exists
       await exec(`git push origin :refs/tags/${targetTag}`)
@@ -31,8 +30,8 @@ async function forcePushTags({
       // push the tag to the remote
       await exec(`git push origin ${targetTag}`)
     }
-  } catch (e) {
-    throw new GitError(e)
+  } catch (error) {
+    throw new GitError(error)
   }
 }
 
