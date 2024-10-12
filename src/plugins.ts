@@ -6,7 +6,7 @@ import npm from '@semantic-release/npm'
 import releaseNotesGenerator from '@semantic-release/release-notes-generator'
 
 function fixPluginName(plugin: any, name: string) {
-  Object.keys(plugin).forEach((type) =>
+  Object.keys(plugin).forEach(type =>
     Reflect.defineProperty(plugin[type], 'pluginName', {
       value: name,
       writable: false,

@@ -1,5 +1,3 @@
-/* eslint-disable no-await-in-loop */
-
 import { exec } from '@actions/exec'
 import * as SemanticRelease from 'semantic-release'
 import { GitError } from './errors'
