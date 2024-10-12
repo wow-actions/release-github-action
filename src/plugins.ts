@@ -1,9 +1,9 @@
 import changelog from '@semantic-release/changelog'
-import commitAnalyzer from '@semantic-release/commit-analyzer'
+import * as commitAnalyzer from '@semantic-release/commit-analyzer'
 import git from '@semantic-release/git'
-import github from '@semantic-release/github'
-import npm from '@semantic-release/npm'
-import releaseNotesGenerator from '@semantic-release/release-notes-generator'
+import * as github from '@semantic-release/github'
+import * as npm from '@semantic-release/npm'
+import * as releaseNotesGenerator from '@semantic-release/release-notes-generator'
 
 function fixPluginName(plugin: any, name: string) {
   Object.keys(plugin).forEach(type =>
