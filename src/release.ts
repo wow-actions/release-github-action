@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/default
 import semanticRelease from 'semantic-release'
 import { getInputs } from './inputs'
 import { getSemanticReleaseOptions } from './options'
