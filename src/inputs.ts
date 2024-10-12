@@ -1,4 +1,5 @@
 import * as core from '@actions/core'
+// eslint-disable-next-line import/no-named-as-default
 import parseInputs from '@wow-actions/parse-inputs'
 
 export function getInputs() {

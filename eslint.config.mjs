@@ -5,6 +5,9 @@ export default config([
     files: ['src/**/*.js', 'src/**/*.ts'],
   },
   {
-    rules: {},
+    rules: {
+      '@stylistic/brace-style': ['error', '1tbs', { allowSingleLine: true }],
+      '@stylistic/operator-linebreak': ['error', 'after'],
+    },
   },
 ])

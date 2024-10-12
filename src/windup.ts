@@ -1,5 +1,5 @@
 import * as core from '@actions/core'
-import { Result } from 'semantic-release'
+import { type Result } from 'semantic-release'
 
 export async function windup(result: Result) {
   if (!result) {
