@@ -1,3 +1,22 @@
+# [3.0.0](https://github.com/wow-actions/release-github-action/compare/v2.1.3...v3.0.0) (2024-10-12)
+
+
+### Bug Fixes
+
+* fix build errors ([873def8](https://github.com/wow-actions/release-github-action/commit/873def8ad2bdf1ab7b71c4ecfefecac2b6b63b39))
+* fix build errors ([a0e7cca](https://github.com/wow-actions/release-github-action/commit/a0e7cca55f0449ab4fdb4d0ccb8036e836c27862))
+* fix lint errors ([6e97bab](https://github.com/wow-actions/release-github-action/commit/6e97babbf0226d1acd3bd75f2abe937dda130109))
+
+
+### Features
+
+* update build tool ([cfa250a](https://github.com/wow-actions/release-github-action/commit/cfa250a2a71580137c2b8ef77e8e039eeabe9f95))
+
+
+### BREAKING CHANGES
+
+* use esbuild
+
 ## [2.1.3](https://github.com/wow-actions/release-github-action/compare/v2.1.2...v2.1.3) (2023-03-10)
 
 
