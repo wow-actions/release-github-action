@@ -34,7 +34,7 @@ async function forcePushTags({
 }
 
 async function publish(
-  pluginConfig: any,
+  _pluginConfig: any,
   context: {
     logger: Logger
     nextRelease: SemanticRelease.NextRelease
