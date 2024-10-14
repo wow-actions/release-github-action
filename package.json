@@ -22,7 +22,7 @@
   "dependencies": {
     "@actions/core": "^1.10.0",
     "@actions/exec": "^1.1.1",
-    "@actions/github": "^5.1.1",
+    "@actions/github": "^6.0.0",
     "@semantic-release/changelog": "^6.0.2",
     "@semantic-release/commit-analyzer": "^9.0.2",
     "@semantic-release/error": "^3.0.0",
@@ -34,7 +34,7 @@
     "semantic-release": "^19.0.5"
   },
   "devDependencies": {
-    "@bubkoo/eslint-config": "^3.0.1",
+    "@bubkoo/eslint-config": "^3.1.0",
     "@bubkoo/husky-hooks": "^2.0.0",
     "@bubkoo/prettier-config": "^2.0.0",
     "@bubkoo/tsconfig": "^2.0.0",
